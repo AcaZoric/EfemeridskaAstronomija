@@ -3,10 +3,10 @@ using System.Collections;
 
 public class OkretanjeZemlje : MonoBehaviour
 {
+    public float BrzinaRotacije = 10f;
 
-	// Update is called once per frame
-	void Update () 
+	void FixedUpdate () 
     {
-        transform.Rotate(new Vector3(0, 2, 0));
+        transform.Rotate(new Vector3(0, 1, 0)*BrzinaRotacije);
 	}
 }

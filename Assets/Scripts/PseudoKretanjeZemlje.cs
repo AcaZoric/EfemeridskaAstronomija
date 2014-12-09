@@ -3,28 +3,26 @@ using System.Collections;
 
 public class PseudoKretanjeZemlje : MonoBehaviour 
 {
-    int x_pomeraj=-15, z_pomeraj=15;
-	// Use this for initialization
+    public int PocetniMesec = 1;
+    public Transform[] putanja;
+    public float brzina = 10f;
+    int i,n;
 	
-	// Update is called once per frame
-    void Update()
+    //start funkcija se poziva samo jednom, kad se pokrene/pojavi/osposobi skripta, tu se obicno inicijalizuju podaci
+    void Start()
     {
-        if(transform.position.x < -1400)
+        i = PocetniMesec-1;
+        n = putanja.Length;
+    }
+
+    void FixedUpdate()
+    {
+        if ( Vector3.Distance(transform.position, putanja[i].position)<15)
         {
-            x_pomeraj = +15;
+            if (i < n - 1) i++;
+            else i = 0;//ako nije posledja tacka putanje idi na sledecu, inace pocni od pocetka
         }
-        if (transform.position.x > 1400)
-        {
-            x_pomeraj = -15;
-        }
-        if(transform.position.z < -1400)
-        {
-            z_pomeraj = +15;
-        }
-        if (transform.position.z > 1400)
-        {
-            z_pomeraj = -15;
-        }
-        transform.Translate(new Vector3(x_pomeraj, 0, z_pomeraj));
+
+        transform.Translate(Vector3.Normalize(putanja[i].position - transform.position)*brzina);
     }	
 }
