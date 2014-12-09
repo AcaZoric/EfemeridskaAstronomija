@@ -7,6 +7,6 @@ public class OkretanjeZemlje : MonoBehaviour
 
 	void FixedUpdate () 
     {
-        transform.Rotate(new Vector3(0, 1, 0)*BrzinaRotacije);
+        transform.Rotate(new Vector3(0, -1, 0)*BrzinaRotacije);
 	}
 }
