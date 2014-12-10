@@ -25,3 +25,7 @@ $$SOE
 $$EOE
 *******************************************************************************
 -----------------------------------------------------------------------------------
+temperatura beograd: https://weatherspark.com/history/32458/2013/Belgrade-Central-Serbia
+http://climatevo.com/2013,belgrade,rs
+temp: http://www.wunderground.com/history/airport/LYBE/2014/12/10/DailyHistory.html?
+https://gis.ncdc.noaa.gov/map/viewer/#app=cdo&cfg=obs&theme=ghcn

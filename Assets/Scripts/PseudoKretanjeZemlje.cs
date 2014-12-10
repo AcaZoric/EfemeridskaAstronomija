@@ -24,6 +24,6 @@ public class PseudoKretanjeZemlje : MonoBehaviour
             else i = 0;//ako nije posledja tacka putanje idi na sledecu, inace pocni od pocetka
         }
 
-        transform.Translate(Vector3.Normalize(putanja[i].position - transform.position)*brzina);
+        transform.Translate(Vector3.Normalize(putanja[i].position - transform.position)*brzina*MenadzerSkripta.menadzerSkripta.brzina);
     }	
 }

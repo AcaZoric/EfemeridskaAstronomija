@@ -3,80 +3,80 @@ using System.Collections;
 
 public class ObradjivanjePodataka : MonoBehaviour
 {
-    public float mesec;
-    public float dan;
-    public void converter(float redniBroj)
+    
+    public void converter(float RedniBroj)
     {
-        if (redniBroj >= 1 && redniBroj <= 31)
+        MenadzerSkripta.menadzerSkripta.RedniBrojDana = (int)RedniBroj;
+        if ((int)RedniBroj >= 1 && (int)RedniBroj <= 31)
         {
-            mesec = 1;
-            dan = redniBroj;
+             MenadzerSkripta.menadzerSkripta.Mesec = 1;
+             MenadzerSkripta.menadzerSkripta.Dan = (int)RedniBroj;
         }
 
-        if (redniBroj >= 32 && redniBroj <= 59)
+        if ((int)RedniBroj >= 32 && (int)RedniBroj <= 59)
         {
-            mesec = 2;
-            dan = redniBroj - 31;
+             MenadzerSkripta.menadzerSkripta.Mesec = 2;
+             MenadzerSkripta.menadzerSkripta.Dan = (int)RedniBroj - 31;
         }
 
-        if (redniBroj >= 60 && redniBroj <= 90)
+        if ((int)RedniBroj >= 60 && (int)RedniBroj <= 90)
         {
-            mesec = 3;
-            dan = redniBroj - 59;
+             MenadzerSkripta.menadzerSkripta.Mesec = 3;
+             MenadzerSkripta.menadzerSkripta.Dan = (int)RedniBroj - 59;
         }
 
-        if (redniBroj >= 91 && redniBroj <= 120)
+        if ((int)RedniBroj >= 91 && (int)RedniBroj <= 120)
         {
-            mesec = 4;
-            dan = redniBroj - 90;
+             MenadzerSkripta.menadzerSkripta.Mesec = 4;
+             MenadzerSkripta.menadzerSkripta.Dan = (int)RedniBroj - 90;
         }
 
-        if (redniBroj >= 121 && redniBroj <= 151)
+        if ((int)RedniBroj >= 121 && (int)RedniBroj <= 151)
         {
-            mesec = 5;
-            dan = redniBroj - 120;
+             MenadzerSkripta.menadzerSkripta.Mesec = 5;
+             MenadzerSkripta.menadzerSkripta.Dan = (int)RedniBroj - 120;
         }
 
-        if (redniBroj >= 152 && redniBroj <= 181)
+        if ((int)RedniBroj >= 152 && (int)RedniBroj <= 181)
         {
-            mesec = 6;
-            dan = redniBroj - 151;
+             MenadzerSkripta.menadzerSkripta.Mesec = 6;
+             MenadzerSkripta.menadzerSkripta.Dan = (int)RedniBroj - 151;
         }
 
-        if (redniBroj >= 182 && redniBroj <= 212)
+        if ((int)RedniBroj >= 182 && (int)RedniBroj <= 212)
         {
-            mesec = 7;
-            dan = redniBroj - 181;
+             MenadzerSkripta.menadzerSkripta.Mesec = 7;
+             MenadzerSkripta.menadzerSkripta.Dan = (int)RedniBroj - 181;
         }
 
-        if (redniBroj >= 213 && redniBroj <= 243)
+        if ((int)RedniBroj >= 213 && (int)RedniBroj <= 243)
         {
-            mesec = 8;
-            dan = redniBroj - 212;
+             MenadzerSkripta.menadzerSkripta.Mesec = 8;
+             MenadzerSkripta.menadzerSkripta.Dan = (int)RedniBroj - 212;
         }
 
-        if (redniBroj >= 243 && redniBroj <= 272)
+        if ((int)RedniBroj >= 243 && (int)RedniBroj <= 272)
         {
-            mesec = 9;
-            dan = redniBroj - 242;
+             MenadzerSkripta.menadzerSkripta.Mesec = 9;
+             MenadzerSkripta.menadzerSkripta.Dan = (int)RedniBroj - 242;
         }
 
-        if (redniBroj >= 273 && redniBroj <= 303)
+        if ((int)RedniBroj >= 273 && (int)RedniBroj <= 303)
         {
-            mesec = 10;
-            dan = redniBroj - 272;
+             MenadzerSkripta.menadzerSkripta.Mesec = 10;
+             MenadzerSkripta.menadzerSkripta.Dan = (int)RedniBroj - 272;
         }
 
-        if (redniBroj >= 304 && redniBroj <= 333)
+        if ((int)RedniBroj >= 304 && (int)RedniBroj <= 333)
         {
-            mesec = 11;
-            dan = redniBroj - 303;
+             MenadzerSkripta.menadzerSkripta.Mesec = 11;
+             MenadzerSkripta.menadzerSkripta.Dan = (int)RedniBroj - 303;
         }
 
-        if (redniBroj >= 334 && redniBroj <= 364)
+        if ((int)RedniBroj >= 334 && (int)RedniBroj <= 364)
         {
-            mesec = 12;
-            dan = redniBroj - 333;
+             MenadzerSkripta.menadzerSkripta.Mesec = 12;
+             MenadzerSkripta.menadzerSkripta.Dan = (int)RedniBroj - 333;
         }
 
     }
