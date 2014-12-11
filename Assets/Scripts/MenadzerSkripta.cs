@@ -7,12 +7,13 @@ public class MenadzerSkripta : MonoBehaviour
     public static MenadzerSkripta menadzerSkripta;
     public Text LabelaDatum;
     public Text LabelaZemljaSunce;
+    public Slider SlajderDatum;
     public GameObject Sunce;
     public float brzina = 1f;
     public int Dan = 1;
     public int Mesec = 1;
     public int RedniBrojDana = 1;
-    public float[] ZemljaSunce;
+    public double[] ZemljaSunce;
 
     private float Brojac = 0f;
     void Start()
@@ -27,22 +28,32 @@ public class MenadzerSkripta : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        Brojac=Brojac+brzina;
-        if(Brojac>=35)
+        Brojac = Brojac + brzina;
+        if (Brojac >= 35)
         {
+            if (RedniBrojDana == 365)
+                RedniBrojDana = 0;
             RedniBrojDana++;
+            SlajderDatum.value = RedniBrojDana;
             Brojac = 0;
             Sunce.transform.rotation = Quaternion.identity;
             Sunce.transform.Rotate(new Vector3(0f, (float)(-RedniBrojDana * 0.98), 0f));
-            Converter();
         }
         else
         {
-            Sunce.transform.Rotate(new Vector3(0f, -0.029f, 0f)*brzina);
+            Sunce.transform.Rotate(new Vector3(0f, -0.029f, 0f) * brzina);
         }
-
+        if (RedniBrojDana >= 79)
+            SlajderDatum.GetComponentInChildren<Image>().color = Color.green;
+        if (RedniBrojDana >= 172)
+            SlajderDatum.GetComponentInChildren<Image>().color = Color.yellow;
+        if (RedniBrojDana >= 264)
+            SlajderDatum.GetComponentInChildren<Image>().color = Color.red;
+        if (RedniBrojDana >= 354 || RedniBrojDana<79)
+            SlajderDatum.GetComponentInChildren<Image>().color = Color.white;
+        Converter();
         LabelaDatum.text = Dan + "." + Mesec + ".";
-        LabelaZemljaSunce.text = " " +ZemljaSunce[RedniBrojDana - 1];
+        LabelaZemljaSunce.text = "Razdaljina izmedju zemlje i sunca:\n" + ZemljaSunce[RedniBrojDana - 1] + "km";
     }
 
     public void Converter()

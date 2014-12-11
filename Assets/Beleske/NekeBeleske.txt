@@ -1,3 +1,4 @@
+tema: godisnja doba
 zemlja: 3.678=1, 0.128=0.99
 razmera: 6378.1:1;
 sunce_zemlja:2300
