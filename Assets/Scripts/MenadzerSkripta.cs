@@ -6,25 +6,28 @@ public class MenadzerSkripta : MonoBehaviour
 {
     public static MenadzerSkripta menadzerSkripta;
     public Text LabelaDatum;
+    public Text LabelaZemljaSunce;
     public GameObject Sunce;
     public float brzina = 1f;
     public int Dan = 1;
     public int Mesec = 1;
     public int RedniBrojDana = 1;
+    public float[] ZemljaSunce;
 
     private float Brojac = 0f;
     void Start()
     {
+        menadzerSkripta = this;
+        this.GetComponent<CitanjeIzDatoteke>().UcitajRazdaljine();
         Dan = 1;
         Mesec = 1;
         RedniBrojDana = 1;
-        menadzerSkripta = this;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        Brojac=(Brojac+1)*brzina;
+        Brojac=Brojac+brzina;
         if(Brojac>=35)
         {
             RedniBrojDana++;
@@ -32,14 +35,14 @@ public class MenadzerSkripta : MonoBehaviour
             Sunce.transform.rotation = Quaternion.identity;
             Sunce.transform.Rotate(new Vector3(0f, (float)(-RedniBrojDana * 0.98), 0f));
             Converter();
-            LabelaDatum.text = Dan + "." + Mesec + ".";
         }
         else
         {
-            Sunce.transform.Rotate(new Vector3(0f, -0.029f, 0f));
+            Sunce.transform.Rotate(new Vector3(0f, -0.029f, 0f)*brzina);
         }
-      
-        
+
+        LabelaDatum.text = Dan + "." + Mesec + ".";
+        LabelaZemljaSunce.text = " " +ZemljaSunce[RedniBrojDana - 1];
     }
 
     public void Converter()
