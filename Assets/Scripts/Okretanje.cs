@@ -5,8 +5,12 @@ public class Okretanje : MonoBehaviour
 {
     public float BrzinaRotacije = 10f;
 
-	void FixedUpdate () 
+    private float brzina = 1f;
+
+    void FixedUpdate()
     {
-        transform.Rotate(new Vector3(0, -1, 0) * BrzinaRotacije * MenadzerSkripta.menadzerSkripta.brzina);
-	}
+        if (MenadzerSkripta.menadzerSkripta == true)
+            brzina = MenadzerSkripta.menadzerSkripta.brzina;
+        transform.Rotate(new Vector3(0, -1, 0) * BrzinaRotacije * brzina);
+    }
 }
