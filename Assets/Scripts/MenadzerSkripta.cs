@@ -28,6 +28,8 @@ public class MenadzerSkripta : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (Input.GetKeyDown(KeyCode.Escape))
+            Application.Quit();
         Brojac = Brojac + brzina;
         if (Brojac >= 35)
         {
